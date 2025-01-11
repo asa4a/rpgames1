@@ -1,0 +1,6 @@
+sword1, 1, 10
+sword2, 1, 12
+sword3, 1, 15
+bow1, 5, 9
+bow2, 7, 11
+bow3, 12, 13

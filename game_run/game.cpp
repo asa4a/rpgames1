@@ -6,6 +6,12 @@
 #include <vector>
 #include <thread>
 #include <chrono>
+
+
+#include "chapter.h"
+#include "enemy.h"
+#include "player.h"
+
 using namespace std;
 
 bool hit(float distBetween, int range){
@@ -24,7 +30,7 @@ void enemyAttack(){
     
 }
 
-bool battle(Player *player, float weaponAtk, float enemyDist, Enemy *enemy){
+bool battle(Player player, float weaponAtk, float enemyDist, Enemy enemy){
     float dmg = enemy.atk;
     player.def = player.def - dmg;
     dmg = dmg - player.def;
@@ -63,7 +69,7 @@ void loadGame(Player *player){
     }
 }
 
-void saveGame(Player *player){
+void saveGame(Player player){
     string fileName = "savegame.txt";
     ofstream outFile(fileName);
     // string name;
@@ -78,7 +84,7 @@ void saveGame(Player *player){
 }
 
 void newGame(){
-    Player player;
+    Player *player;
     cout  << "Enter your name: ";
     cin >> player.name();
     cout << "Choose your weapon:\n(1) Sword\n(2) Weapon";
